@@ -18,6 +18,9 @@ This is a sample Facebook bot built with Botkit.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+process.env.page_token = "EAAJkP8AmM1EBAC0XtcIU4i0V8d1WK6tjl5EN7qejD7rSkmhol9KIB66ka5Qaaix8xAZBxmRyA3eutjSQlTRS4bPOSVhYLA8sXiqgY2VDNZAp2WsN77ZBIkkTxoiYqUc40Jn2qTorM7EiPEnChqrqjqYaOcZCeL7IDEIL5DLpnwZDZD";
+process.env.verify_token = "enes";
+
 if (!process.env.page_token) {
     console.log('Error: Specify a Facebook page_token in environment.');
     usage_tip();
