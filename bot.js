@@ -76,7 +76,7 @@ require("fs").readdirSync(normalizedPath).forEach(function(file) {
 // controller.studio.before, controller.studio.after and controller.studio.validate
 if (process.env.studio_token) {
     controller.on('message_received', function(bot, message) {
-        if (message.text) {
+        if (message.text) { console.log("message.text", message.text);
             controller.studio.runTrigger(bot, message.text, message.user, message.channel).then(function(convo) {
                 if (!convo) {
                     // no trigger was matched
