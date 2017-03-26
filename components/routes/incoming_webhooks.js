@@ -3,7 +3,7 @@ var debug = require('debug')('botkit:incoming_webhooks');
 module.exports = function(webserver, controller) {
 
     debug('Configured POST /facebook/receive url for receiving events');
-    webserver.post('/facebook/receive', function(req, res) {
+    webserver.post('/facebook/receive', function(req, res) { console.log(req);
 
         // NOTE: we should enforce the token check here
 
