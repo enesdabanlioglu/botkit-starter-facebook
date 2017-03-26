@@ -14,7 +14,14 @@ module.exports = function(webserver, controller) {
         var bot = controller.spawn({});
 
         // Now, pass the webhook into be processed
-        controller.handleWebhookPayload(req, res, bot);
+        //controller.handleWebhookPayload(req, res, bot);
+
+        controller.hears(['keyword','^pattern$'],['message_received'],function(bot,message) {
+
+          // do something to respond to message
+          bot.reply(message,'You used a keyword!');
+
+        });
 
     });
 
