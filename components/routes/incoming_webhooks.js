@@ -3,7 +3,7 @@ var debug = require('debug')('botkit:incoming_webhooks');
 module.exports = function(webserver, controller) {
 
     debug('Configured POST /facebook/receive url for receiving events');
-    webserver.post('/facebook/receive', function(req, res) { console.log(req);
+    webserver.post('/facebook/receive', function(req, res) {
 
         // NOTE: we should enforce the token check here
 
@@ -16,10 +16,9 @@ module.exports = function(webserver, controller) {
         // Now, pass the webhook into be processed
         //controller.handleWebhookPayload(req, res, bot);
 
-        controller.hears(['keyword','^pattern$'],['message_received'],function(bot,message) {
+        controller.hears(['hello'], 'message_received', function(bot, message) {
 
-          // do something to respond to message
-          bot.reply(message,'You used a keyword!');
+            bot.reply(message, 'Hey there.');
 
         });
 
